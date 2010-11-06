@@ -119,8 +119,12 @@ event 'http_received' => sub {
 	my $response_object = $response_packet->[0];
 	my ( $sender, $feed, $response_event, $tag ) = @{$request_packet->[1]};
 	my $content = $response_object->content;
-	my $xml_feed = XML::Feed->parse(\$content);
-	$xml_feed = XML::Feed->errstr if !$xml_feed;
+	my $xml_feed;
+	eval {
+		$xml_feed = XML::Feed->parse(\$content);
+		$xml_feed = XML::Feed->errstr if !$xml_feed;
+	};
+	$xml_feed = $@ if $@;
 	# i dont understand that really... need a case (Getty)
 	# if (ref $response_event) {
 		# $response_event->postback->($xml_feed);
