@@ -15,7 +15,7 @@ our $VERSION ||= '0.0development';
 has http_agent => (
 	is => 'ro',
 	isa => 'Str',
-	default => sub { 'POE::Component::Client::Feed/'.$VERSION },
+	default => sub { __PACKAGE__.'/'.$VERSION },
 );
 
 has alias => (
