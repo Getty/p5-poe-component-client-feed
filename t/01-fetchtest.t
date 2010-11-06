@@ -91,7 +91,7 @@ SKIP: {
 	POE::Kernel->run;
 
 	is($atom_cnt,21,'Atom Feed with 21 entries is received');
-	is($atom_cnt,21,'RSS Feed with 21 entries is received');
+	is($rss_cnt,21,'RSS Feed with 21 entries is received');
 }
 
 done_testing;
