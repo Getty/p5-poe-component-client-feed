@@ -10,10 +10,12 @@ use POE qw(
 use HTTP::Request;
 use XML::Feed;
 
+our $VERSION ||= '0.0development';
+
 has http_agent => (
 	is => 'ro',
 	isa => 'Str',
-	default => sub { 'POE::Component::Client::Feed/0.0' },
+	default => sub { 'POE::Component::Client::Feed/'.$VERSION },
 );
 
 has alias => (

@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+	- Now adding proper version (cjm++)
 
 0.001     2010-11-06 04:29:41 Europe/Berlin
 	- Initial release
