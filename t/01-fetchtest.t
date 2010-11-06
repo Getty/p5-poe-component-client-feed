@@ -34,13 +34,12 @@ SKIP: {
 			for my $entry ($xml_feed->entries) {
 				$cnt++;
 			}
+			::isa_ok($http_request, "HTTP::Request", "First arg is HTTP::Request on receive");
 			if ($tag eq 'atom') {
-				::isa_ok($http_request, "HTTP::Request", "First arg is HTTP::Request on receive");
 				::isa_ok($xml_feed, "XML::Feed::Format::Atom", "Second arg is XML::Feed::Format::Atom on receive");
 				$atom_cnt = $cnt;
 				$self->client->yield('request','http://localhost:'.$port.'/rss','feed_received','rss');
 			} elsif ($tag eq 'rss') {
-				::isa_ok($http_request, "HTTP::Request", "First arg is HTTP::Request on receive");
 				::isa_ok($xml_feed, "XML::Feed::Format::RSS", "Second arg is XML::Feed::Format::RSS on receive");
 				$rss_cnt = $cnt;
 				POE::Kernel->stop;

@@ -88,8 +88,6 @@ has http_client => (
 	},
 );
 
-use Data::Dumper;
-
 sub START {
 	my ( $kernel, $self ) = @_[ KERNEL, OBJECT ];
 	$kernel->alias_set($self->alias);
