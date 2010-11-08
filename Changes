@@ -1,7 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
-	- Fixed tests
+
+0.005     2010-11-08 22:19:53 Europe/Berlin
+	- Fixed tests (BinGOs++, kentnl++) 
 
 0.004     2010-11-06 20:49:28 Europe/Berlin
 
