@@ -19,11 +19,11 @@ SKIP: {
 
 	{
 		package Test::PoCoClFe::Example;
-		use MooseX::POE;
-		use POE::Component::Client::Feed;
-		use POE::Component::Server::HTTP;
-		use File::Spec::Functions;
-		use Slurp;
+		require MooseX::POE;
+		require POE::Component::Client::Feed;
+		require POE::Component::Server::HTTP;
+		require File::Spec::Functions;
+		require Slurp;
 
 		event 'feed_received' => sub {
 			my ( $self, @args ) = @_[ OBJECT, ARG0..$#_ ];
