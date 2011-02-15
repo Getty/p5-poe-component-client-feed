@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+	- Added logger docking capability
 
 0.005     2010-11-08 22:19:53 Europe/Berlin
 	- Fixed tests (BinGOs++, kentnl++) 
