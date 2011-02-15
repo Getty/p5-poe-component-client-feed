@@ -13,6 +13,7 @@ use XML::Feed;
 our $VERSION ||= '0.0development';
 
 has logger => (
+	isa => 'Object',
 	is => 'rw',
 	predicate => 'has_logger',
 );
@@ -21,6 +22,7 @@ has http_agent => (
 	is => 'ro',
 	isa => 'Str',
 	default => sub { __PACKAGE__.'/'.$VERSION },
+	required => 1,
 );
 
 has alias => (
@@ -55,6 +57,7 @@ has _http_alias => (
 has http_timeout => (
 	is => 'ro',
 	isa => 'Int',
+	required => 1,
 	default => sub { 30 },
 );
 
@@ -77,6 +80,7 @@ has http_keepalive => (
 has http_followredirects => (
 	is => 'ro',
 	isa => 'Int',
+	required => 1,
 	default => sub { 5 },
 );
 
